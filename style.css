@@ -1,40 +1,54 @@
-.container{
-    max-width: 400px;
-    margin: 10vh auto 0 auto;
-    box-shadow: 0px 0px 43px 17px rgba(153, 153, 153,1);
+.container.relative{
+    position: relative;    
+    border: 2px solid black;
 }
-#displaySpace{
-    text-align: right;
-    height: 70px;
-    line-height: 70px;
-    padding: 16px 8px;
-    font-size: 25px;
+.displaySpace.fixed{
+position: fixed;
+padding: 20 px;
+right: 0px;
+}
+.display{
+    grid-column: 1 / span 4;
+
+}
+.itemC{
+    grid-column: 4 / span 1;
 }
 .buttonsSpace {
     display: grid;
-    border-bottom: 1px solid #999;
-    border-left: 1px solid#999;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #01010f;
+    padding: 10 px;
+    width: 400px;
+    height: 500px;
+    margin: 10px 20px 10px 20px;
+    border: 5px solid black;
 }
-.buttonsSpace> div{
-    border-top: 1px solid #999;
-    border-right: 1px solid#999;
-}
-
-.buttonsSpace{
-    border: 0.5px solid #999;
-    line-height: 100px;
+.buttonsSpace > div{
+    background-color: rgb(169, 171, 167);
     text-align: center;
-    font-size: 25px;
-    cursor: pointer;
+    padding: 10 px 0;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+    
 }
-
-#equal {
-    background-color: rgb(85, 85, 255);
-    color: white;
+.buttonsSpace.absolute{
+    position: absolute;
 }
-.buttons.buttonsSpace:hover {
-    background-color: #323330;
-    color: white;
-    transition: 0.5s ease-in-out;
+.item0{
+    grid-column: 1/ span 2;
+}
+button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #FFBC02;
+    font-size: 16 px;
+}
+#displayInput{
+    width: 100%;
+    margin: 5px 5px 5px 5px;
 }
