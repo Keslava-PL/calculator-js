@@ -1,13 +1,24 @@
-.container.relative{
-    position: relative;    
-    border: 2px solid black;
+*{
+    box-sizing: border-box;
 }
-.displaySpace.fixed{
-position: fixed;
-padding: 20 px;
-right: 0px;
+#title{
+    position: absolute;
+    color: white;
+    font-size:medium;
+    height: auto;
+   
+
+}
+.container{
+    position: relative;
+    max-width: 1000px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 .display{
+    position: relative;
     grid-column: 1 / span 4;
 
 }
@@ -15,28 +26,30 @@ right: 0px;
     grid-column: 4 / span 1;
 }
 .buttonsSpace {
+    position: relative;
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
     background-color: #01010f;
-    padding: 10 px;
-    width: 400px;
+    padding: 5px;
+    width: 450px;
     height: 500px;
-    margin: 10px 20px 10px 20px;
+    margin: 0 auto;
     border: 5px solid black;
+    
+    
 }
 .buttonsSpace > div{
-    background-color: rgb(169, 171, 167);
+    
+    
     text-align: center;
-    padding: 10 px 0;
+    padding: 2px 0;
     width: 100%;
     font-size: 16px;
     border-radius: 10px;
     
 }
-.buttonsSpace.absolute{
-    position: absolute;
-}
+
 .item0{
     grid-column: 1/ span 2;
 }
@@ -46,9 +59,17 @@ button{
     border-radius: 10px;
     text-align: center;
     background-color: #FFBC02;
-    font-size: 16 px;
+    font-size: larger;
 }
+
 #displayInput{
-    width: 100%;
-    margin: 5px 5px 5px 5px;
+position: absolute;
+bottom: 0px;
+right: 0px;
+width: 98%;
+height: 60%;
+font-size:larger;
+
+
+    
 }
