@@ -20,7 +20,7 @@
 .display{
     position: relative;
     grid-column: 1 / span 4;
-
+    
 }
 .itemC{
     grid-column: 4 / span 1;
@@ -69,6 +69,7 @@ right: 0px;
 width: 98%;
 height: 60%;
 font-size:larger;
+text-align: right;
 
 
     
