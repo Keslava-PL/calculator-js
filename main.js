@@ -4,21 +4,17 @@ const spec = document.querySelectorAll(".spec");
 const number = document.querySelectorAll(".number");
 const equalSign = document.querySelector(".specEq");
 
+//global variables
 let previousNumber = "";
 let currentNumber = "";
 let displayNumber = "";
 let operationSign = "";
 
-
-let clickedSpec = 0;
-let score = 0;
-
-
 //event listener to operational buttons
 spec.forEach(function (par) {
   par.addEventListener("click", function () {
     operationSign = par.value;
-    
+
     verify();
   });
 });
@@ -27,53 +23,63 @@ number.forEach(function (one) {
   one.addEventListener("click", function () {
     display.value = display.value + one.value;
     currentNumber = display.value;
-    
   });
 });
-function verify(){
 
-  console.log("prev:",previousNumber, "cur:",currentNumber, "disp:",displayNumber);
- 
-  if(previousNumber === "" && displayNumber ==="" ){
-    console.log('1');
+function verify() {
+  if (previousNumber === "" && displayNumber === "") {
+    
     previousNumber = currentNumber;
     clearDisplay();
-  }
-  else if(previousNumber !== "" && displayNumber === "" && currentNumber!==""){
-    console.log('2');
-    doCalc(previousNumber, currentNumber, operationSign);
+  } else if (
+    previousNumber !== "" &&
+    displayNumber === "" &&
+    currentNumber !== ""
+  ) {
     
-  }
-  else if(previousNumber != "" && currentNumber !="" && displayNumber !=""){
-    console.log('3');
+    doCalc(previousNumber, currentNumber, operationSign);
+  } else if (
+    previousNumber != "" &&
+    currentNumber != "" &&
+    displayNumber != ""
+  ) {
+    
     //jezeli mam juz cur i prev i disp, nalezy wyczyscic display i ponowic dzialanie z nowo przyjetym curr
     previousNumber = displayNumber;
     clearDisplay();
-  }
-  else if(previousNumber!=="" && currentNumber ==="" & displayNumber ===""){
+  } else if (
+    previousNumber !== "" &&
+    currentNumber === "" && displayNumber === ""
+  ) {
+    console.log('tt');
     clearDisplay();
-  }
+  } 
+  
 }
-function stan(){
-  console.log("prev:",previousNumber, "cur:",currentNumber, "disp:",displayNumber);
+function stan() {
+  console.log(
+    "prev:",
+    previousNumber,
+    "cur:",
+    currentNumber,
+    "disp:",
+    displayNumber
+  );
 }
-function doCalc(pre, cur, sign){
-  if(sign === "+"){
-   displayNumber = add(Number(pre),Number(cur));
-  }
-  else if(sign === "-"){
-    displayNumber = sub(Number(pre),Number(cur));
-  }
-  else if(sign === "/"){
-   displayNumber=div(Number(pre),Number(cur));
-  }
-  else if(sign === "x"){
-   displayNumber=mul(Number(pre),Number(cur));
+function doCalc(pre, cur, sign) {
+  if (sign === "+") {
+    displayNumber = add(Number(pre), Number(cur));
+  } else if (sign === "-") {
+    displayNumber = sub(Number(pre), Number(cur));
+  } else if (sign === "/") {
+    displayNumber = div(Number(pre), Number(cur));
+  } else if (sign === "x") {
+    displayNumber = mul(Number(pre), Number(cur));
   }
   console.log(previousNumber, currentNumber, displayNumber);
 
   display.value = displayNumber;
-  previousNumber=displayNumber;
+  previousNumber = displayNumber;
   displayNumber = "";
   currentNumber = "";
 }
@@ -81,11 +87,11 @@ function doCalc(pre, cur, sign){
 equalSign.addEventListener("click", verify);
 
 //event listener to Clear button
-resetBtn.addEventListener("click", function(){
-  previousNumber ="";
-  currentNumber="";
-  displayNumber="";
-  operationSign="";
+resetBtn.addEventListener("click", function () {
+  previousNumber = "";
+  currentNumber = "";
+  displayNumber = "";
+  operationSign = "";
   clearDisplay();
 });
 
@@ -93,17 +99,15 @@ resetBtn.addEventListener("click", function(){
 function clearDisplay() {
   display.value = "";
 
-  currentNumber="";
-  displayNumber="";
+  currentNumber = "";
+  displayNumber = "";
 }
-
-
 
 function add(value1, value2) {
   return value1 + value2;
 }
 function mul(value1, value2) {
-  return value1 + value2;
+  return value1 * value2;
 }
 function div(value1, value2) {
   return value1 / value2;
@@ -111,4 +115,3 @@ function div(value1, value2) {
 function sub(value1, value2) {
   return value1 - value2;
 }
-
