@@ -1,76 +1,65 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-#title{
-    position: absolute;
-    color: white;
-    font-size:medium;
-    height: auto;
-   
-
+#title {
+  position: absolute;
+  color: white;
+  font-size: medium;
+  height: auto;
 }
-.container{
-    position: relative;
-    max-width: 1000px;
-    height: auto;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 0 auto;
+.container {
+  position: relative;
+  max-width: 1000px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
 }
-.display{
-    position: relative;
-    grid-column: 1 / span 4;
-    
+.display {
+  position: relative;
+  grid-column: 1 / span 4;
 }
-.itemC{
-    grid-column: 4 / span 1;
+.itemC {
+  grid-column: 4 / span 1;
 }
 .buttonsSpace {
-    position: relative;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    background-color: #01010f;
-    padding: 5px;
-    width: 450px;
-    height: 500px;
-    margin: 0 auto;
-    border: 5px solid black;
-    
-    
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #01010f;
+  padding: 5px;
+  width: 450px;
+  height: 500px;
+  margin: 0 auto;
+  border: 5px solid black;
 }
-.buttonsSpace > div{
-    
-    
-    text-align: center;
-    padding: 2px 0;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 10px;
-    
+.buttonsSpace > div {
+  text-align: center;
+  padding: 2px 0;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 10px;
 }
 
-.item0{
-    grid-column: 1/ span 2;
+.item0 {
+  grid-column: 1 / span 2;
 }
-button{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    text-align: center;
-    background-color: orange;
-    font-size: larger;
+button {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: orange;
+  font-size: larger;
 }
 
-#displayInput{
-position: absolute;
-bottom: 0px;
-right: 0px;
-width: 98%;
-height: 60%;
-font-size:larger;
-text-align: right;
-
-
-    
+#displayInput {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 98%;
+  height: 60%;
+  font-size: larger;
+  text-align: right;
 }

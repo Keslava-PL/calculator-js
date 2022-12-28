@@ -21,14 +21,18 @@ spec.forEach(function (par) {
 //event listener to number buttons
 number.forEach(function (one) {
   one.addEventListener("click", function () {
+    if (previousNumber !== "" && currentNumber === "" && displayNumber === "") {
+      clearDisplay();
+      currentNumber = one.value;
+    }
     display.value = display.value + one.value;
     currentNumber = display.value;
   });
 });
 
+//verification function
 function verify() {
   if (previousNumber === "" && displayNumber === "") {
-    
     previousNumber = currentNumber;
     clearDisplay();
   } else if (
@@ -36,36 +40,25 @@ function verify() {
     displayNumber === "" &&
     currentNumber !== ""
   ) {
-    
     doCalc(previousNumber, currentNumber, operationSign);
   } else if (
     previousNumber != "" &&
     currentNumber != "" &&
     displayNumber != ""
   ) {
-    
-    //jezeli mam juz cur i prev i disp, nalezy wyczyscic display i ponowic dzialanie z nowo przyjetym curr
     previousNumber = displayNumber;
     clearDisplay();
   } else if (
     previousNumber !== "" &&
-    currentNumber === "" && displayNumber === ""
+    currentNumber === "" &&
+    displayNumber === ""
   ) {
-    console.log('tt');
+    console.log("tt");
     clearDisplay();
-  } 
-  
+  }
 }
-function stan() {
-  console.log(
-    "prev:",
-    previousNumber,
-    "cur:",
-    currentNumber,
-    "disp:",
-    displayNumber
-  );
-}
+
+//logic function
 function doCalc(pre, cur, sign) {
   if (sign === "+") {
     displayNumber = add(Number(pre), Number(cur));
@@ -95,14 +88,14 @@ resetBtn.addEventListener("click", function () {
   clearDisplay();
 });
 
-//
+//clearing screen
 function clearDisplay() {
   display.value = "";
 
   currentNumber = "";
   displayNumber = "";
 }
-
+//operations functions
 function add(value1, value2) {
   return value1 + value2;
 }
